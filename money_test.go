@@ -5,12 +5,20 @@ import (
 )
 
 func TestMultiplication(t *testing.T) {
-	got := Doller{amount: 5}
-	got.Times(2)
+	d := Doller{amount: 5}
+	actual := d.Times(2)
 
-	want := Doller{amount: 10}
+	expected := Doller{amount: 10}
 
-	if got != want {
-		t.Errorf("want %v, but got %v", want, got)
+	if actual != expected {
+		t.Errorf("expected %v, but actual %v", expected, actual)
+	}
+
+	actual = d.Times(3)
+
+	expected = Doller{amount: 15}
+
+	if actual != expected {
+		t.Errorf("expected %v, but actual %v", expected, actual)
 	}
 }
